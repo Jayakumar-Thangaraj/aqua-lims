@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.data/
+*.log
+.env
+coverage/
+test-results/
+playwright-report/
+migration-report*.json

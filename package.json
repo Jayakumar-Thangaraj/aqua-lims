@@ -1,0 +1,33 @@
+{
+  "name": "aqualims",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Aqua LIMS - aquarium water quality LIMS (MERN rebuild of the XAF AquaLIMS app)",
+  "type": "module",
+  "workspaces": [
+    "shared",
+    "server",
+    "client",
+    "scripts"
+  ],
+  "scripts": {
+    "db": "npm run db --workspace scripts",
+    "seed": "npm run seed --workspace scripts --",
+    "migrate": "npm run migrate --workspace scripts --",
+    "dev:server": "npm run dev --workspace server",
+    "dev:client": "npm run dev --workspace client",
+    "dev": "concurrently -k -n db,api,web -c blue,green,magenta \"npm run db\" \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "npm run build --workspace client",
+    "start": "npm run start --workspace server",
+    "typecheck": "tsc -p shared --noEmit && tsc -p server --noEmit && tsc -p client --noEmit && tsc -p scripts --noEmit",
+    "test": "npm run test --workspace shared && npm run test --workspace server",
+    "test:e2e": "npm run test:e2e --workspace client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

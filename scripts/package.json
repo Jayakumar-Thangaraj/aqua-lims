@@ -1,0 +1,26 @@
+{
+  "name": "@aqualims/scripts",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "db": "tsx dev-db.ts",
+    "seed": "tsx seed.ts",
+    "migrate": "tsx migrate-from-sqlserver.ts"
+  },
+  "dependencies": {
+    "@aqualims/server": "1.0.0",
+    "@aqualims/shared": "1.0.0",
+    "mongodb-memory-server": "^10.1.2",
+    "mongoose": "^8.9.0",
+    "mssql": "^11.0.1",
+    "tsx": "^4.19.2"
+  },
+  "optionalDependencies": {
+    "msnodesqlv8": "^4.4.0"
+  },
+  "devDependencies": {
+    "@types/mssql": "^9.1.5",
+    "@types/node": "^22.10.1"
+  }
+}
